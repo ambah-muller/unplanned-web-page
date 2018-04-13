@@ -233,17 +233,6 @@ hr.light-100 {
 	font-size: 16px;
 }
 
-.box input[type="submit"] {
-	background: transparent;
-	border: none;
-	outline: none;
-	color: #fff;
-	background: #6648b1;
-	padding: 10px 20px;
-	cursor: pointer;
-	border-radius: 5px;
-}
-
 .box a {
 	text-decoration: none;
 	font-size: 12px;
