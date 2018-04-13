@@ -10,8 +10,8 @@ html, body {
 /* Navigation Bar */
 
 .top-logo {
-	width: 150px;
-	height: 75px;
+	width: 100px;
+	height: 45px;
 }
 
 .navbar {
@@ -180,6 +180,70 @@ hr.light-100 {
 	margin-bottom: 1rem;
 }
 
+/* Login Page */
+
+.box {
+	width: 320px;
+	background: rgba(0,0,0,.8);
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	padding: 70px 30px;
+}
+
+.loginAvatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+}
+
+.box h2 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.box p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.box input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.box input[type="text"], input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+
+.box a {
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: darkgrey;
+}
+
+.box a:hover {
+	color: #fff;
+}
+
 /* Media Queries */
 
 @media (max-width: 992px) {
@@ -187,7 +251,7 @@ hr.light-100 {
 		font-size: 4em;
 		padding: 2rem;
 	}
-  }
+}
 
 @media (max-width: 768px) {
   .carousel-caption {
