@@ -79,7 +79,7 @@
               SELECT * FROM user WHERE user_id="$username"; */
 
       $result = mysqli_query($conn, $sql);
-      $resultCheck = mysql_num_row(%result);
+      $resultCheck = mysql_num_row($result);
 
       if($resultCheck < 1) {  //no rows = no match...username does not exist
         header("Location: ../index.html?login=error");
