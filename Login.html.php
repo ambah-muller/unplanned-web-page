@@ -88,7 +88,7 @@
       else {  //correct pasword//
         if($row = mysqli_fetch_assoc($result)){
           //De-hashing password
-          $hashedPassword = password_verify($pasword, $row['password']);
+          $hashedPassword = password_verify($password, $row['password']);
 
           //check if true or false result
           if($hashedPassword == false) {
