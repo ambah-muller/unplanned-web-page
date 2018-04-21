@@ -28,7 +28,7 @@
     <div class="regBox">
       <img src="img/user.png" class="loginAvatar">
       <h2>Sign Up</h2>
-      <form>
+      <form action="Register.html" method="POST">
         <div class="inputBox">	<!-- input boxes -->
           <p>Username</p>
           <input type="text" name="screen" placeholder="Enter screen name" required="">
@@ -66,3 +66,71 @@
     </div>
   </body>
 </html>
+
+<?php
+
+	<!--check if user clicked sign up button-->
+	if (isset($_POST['submit'])) {
+
+		include_once 'dbh.inc.php';	<!--db access page-->
+
+		$screen_name = mysqli_real_escape_string($conn, $_POST['screen']); <!--prevent users from submitting code-->
+		$first = mysqli_real_escape_string($conn, $_POST['firstName']);
+		$last = mysqli_real_escape_string($conn, $_POST['lastName']);
+		$email = mysqli_real_escape_string($conn, $_POST['email']);
+		$phone = mysqli_real_escape_string($conn, $_POST['phoneNo']);
+		$dob = mysqli_real_escape_string($conn, $_POST['dob']);
+		$gender = mysqli_real_escape_string($conn, $_POST['gender']);
+		$password = mysqli_real_escape_string($conn, $_POST['password']);
+
+		<!--error handlers-->
+		<!--check for empty fields-->
+		if(empty($screen_name) || empty($first) || empty($last) || empty($email) || empty($phone) || empty($dob) || empty($gender) || empty($password)) {
+			header("Location: ../Register.html?signup=empty");
+			exit();
+		}
+		else { <!--no empty fields-->
+			<!--check if inout characters are valid-->
+			if (!preg_match("/^[a-zA-Z]*$/", $screen_name) || !preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/", $last) || !preg_match("/^[a-zA-Z]*$/", $phone) || !preg_match("/^[a-zA-Z]*$/", $dob)) {
+				header("Location: ../Register.html?signup=invalid");
+				exit();
+			}
+			else { <!--valid charcters-->
+				<!--check if email is valid-->
+				if(!filter_var($email, FILTER_VALIDATE_EMAIL)) { <!--check if not valid-->
+					header("Location: ../Register.html?signup=email");
+					exit();
+				}
+				else {
+					<!--check if user name exists-->
+					$sql = <!--craig call stored procedure here to check if user name already exists
+								"SELECT * FROM users WHERE userId='$screen_name'";-->;
+					$result = mysqli_query($conn, $sql);
+					$resultCheck = mysqli_num_rows($result);
+
+					if($resultCheck > 0) { <!--screen name already taken-->
+						header("Location: ../Register.html?signup=nametaken");
+						exit();
+					}
+					else {
+						<!--Hasing password-->
+						$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+						<!--insert user into db-->
+						$sql = <!--craig, stored procedure to insert user into db
+									"INSERT INTO users (.....) VALUES ('$screen_name', '$first'......);"-->;
+						mysqli_query($conn, $sql);
+						<!--send user to new page-->
+						header("Location: ../HomePageLoggedIn.html?signup=success");
+						exit();
+					}
+				}
+			}
+		}
+	}
+	else {
+		<!--send back to sign up page-->
+		header("Location: ../Register.html");
+		exit();
+	}
+
+?>
