@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>Login-Unplanned Pregnancy</title>
+  	<!--Bootstrap CDN (Content Delivery Network)-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  	<!--Link for JQuery and JavaScript stuff-->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  	<link href="style.css" rel="stylesheet">
+
+    <style type="text/css">
+      body{
+        background-image: url(img/pexels-photo-567973.jpeg);
+        background-size: cover;
+      }
+      .btn {
+        //Move to center???
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="regBox">
+      <img src="img/user.png" class="loginAvatar">
+      <h2>Sign Up</h2>
+      <form>
+        <div class="inputBox">	<!-- input boxes -->
+          <p>Username</p>
+          <input type="text" name="screen" placeholder="Enter screen name" required="">
+          <p>Name</p>
+          <input type="text" name="firstName" placeholder="Enter First Name"><br>
+          <input type="text" name="lastName" placeholder="Enter Last Name">
+          <p>Email</p>
+          <input type="text" name="email" placeholder="Enter Email Address" required="">
+          <p>Contact</p>
+          <input type="text" name="phoneNo" placeholder="Enter Phone Number">
+          <p>Date of Birth</p> <!--Replace with calendar-->
+          <input type="text" name="dob" placeholder="DD/MM/YYYY">
+        </div>
+
+        <div class="inputBox">
+        	<p>Gender</p>
+        	<input type="radio" name="gender" value="Female">Female&nbsp;&nbsp;&nbsp;
+        	<input type="radio" name="gender" value="Male">Male
+        </div>
+
+        <div class="inputBox">
+          <p>Password</p>
+          <input type="password" name="password" placeholder="Enter Password" required="">
+          <input type="password" name="verifyPassword" placeholder="Re-enter Password" required="">
+        </div>
+        <a href="HomePageLoggedIn.html">
+          <button type="button" class="btn btn-primary btn-lg">Sign Up</button>
+        </a>
+        <a href="index.html">
+          <button type="button" class="btn btn-outline-light btn-lg">Cancel</button>
+        </a>
+        <br>
+ 		<input type="checkbox" name="terms" value="agree">Agree to Ts&Cs
+      </form>
+    </div>
+  </body>
+</html>
