@@ -199,6 +199,70 @@ hr.light-100 {
 	color: #fff;
 }
 
+/* Register Page */
+.regBox {
+	width: 500px;
+	background: rgba(0,0,0,.8);
+	color: #fff;
+	top: 85%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	padding: 70px 30px;
+}
+
+.regBox h2 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.regBox p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.regBox input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.regBox input[type="text"], input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+
+.regBox input[type="radio"] {
+	width: 5%;
+	font-size: 16px;
+}
+
+.regBox input[type="checkbox"] {
+	width: 5%;
+	font-size: 16px;
+}
+
+.regBox a {
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: darkgrey;
+}
+
+.regBox a:hover {
+	color: #fff;
+}
+
 /* Media Queries */
 
 @media (max-width: 992px) {
